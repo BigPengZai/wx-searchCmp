@@ -1,0 +1,46 @@
+<view class="container">
+  <!-- 顶部搜索区域 -->
+  <view class="header">
+    <view class="search-container">
+      <image class="icon" src="images/search.png"></image>
+      <input class="bar" value="{{q}}" bind:confirm="onConfirm" placeholder-class="in-bar" placeholder="语言种类" auto-focus="true" />
+      <image class="cancel" src="images/cancel.png"></image>
+    </view>
+    <view class="cancle-btn" bind:tap="onCancle">取消</view>
+  </view>
+  <!-- 搜索内容区域 -->
+  <view wx:if="{{!searching}}">
+    <view class="history">
+      <view class="title">
+        <view class="chunk"></view>
+        <text>历史搜索</text>
+      </view>
+      <view class="tags">
+        <block wx:for="{{historyWords}}" wx:key='index'>
+          <v-tag text="{{item}}" bind:tapping="onConfirm"></v-tag>
+        </block>
+      </view>
+    </view>
+    <view class="history hot-history">
+      <view class="title">
+        <view class="chunk"></view>
+        <text>热门搜索</text>
+      </view>
+      <view class="tags">
+        <block wx:for="{{hotWords}}" wx:key="index">
+          <v-tag text="{{item}}" bind:tapping="onConfirm"></v-tag>
+        </block>
+      </view>
+    </view>
+  </view>
+
+
+  <view wx:if="{{searching}}" class="search-res">
+  <block wx:for="{{dataArray}}" wx:key="{{item.id}}">
+    <v-searchRes res="{{item}}" ></v-searchRes>
+  </block>
+    
+  </view>
+
+
+</view>

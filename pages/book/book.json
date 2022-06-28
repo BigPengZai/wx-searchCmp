@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "v-search":"/components/search/index",
+    "v-searchRes":"/components/searchRes/index"
+  }
+}

@@ -1,0 +1,8 @@
+<!--components/searchRes/index.wxml-->
+<view class="books-container">
+  <text class='name'>language: {{res.language}}</text>
+  <text class='name'>created_at: {{res.created_at}}</text>
+  <text class='name'>forks: {{res.forks}}</text>
+  
+  <text class='description'>description: {{res.description}}</text>
+</view>
