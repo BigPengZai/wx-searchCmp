@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/home/home",
     "pages/book/book",
+    "pages/home/home",
     "pages/mine/mine",
     "components/search/index"
   ],

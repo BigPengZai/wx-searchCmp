@@ -1,71 +1,59 @@
-// pages/book/book.js
+import {
+  random
+} from '../../utils/common.js'
+
+import { BookModel} from '../../models/bookModel'
+const bookModel = new BookModel()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    searching:true,
-    books:[{name:'java',description:'1111111111'},{name:'js',description:'222222'}]
+    searching: false,
+    books: [],
+    more: '',
+    loadingCenter:false
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-    //  wx.request({
-    //    url: 'https://api.github.com/search/repositories',
-    //    data:{
-    //      "q":"java"
-    //    },
-    //    success:(res)=>{
-    //      console.log(res.data.items)
-    //    }
-    //  })
-
-
-
-  },
-
-  onSearching(event){
-    this.setData({
-      searching:true
-    })
-  },
-  onCancle(e){
-    this.setData({
-      searching:false
+    this._showLoadingCenter()
+    bookModel.search('java',10,1).then(res=>{
+      console.log(res)
+      this.setData({
+        books:res.items
+      })
+      this._hideLoadingCenter()
+    },()=>{
+      this._hideLoadingCenter()
     })
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady() {
-
+  onSearching(event) {
+    this.setData({
+      searching: true
+    })
+  },
+  onCancle(e) {
+    this.setData({
+      searching: false
+    })
   },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow() {
-
+  _showLoadingCenter() {
+    this.setData({
+      loadingCenter: true
+    })
   },
 
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide() {
-
+  _hideLoadingCenter() {
+    this.setData({
+      loadingCenter: false
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload() {
-
-  },
-
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
@@ -77,13 +65,9 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom() {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage() {
-
+    // 触底操作，每次修改more 随机16位字符串
+     this.setData({
+       more:random(16)
+     })
   }
 })

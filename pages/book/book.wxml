@@ -1,4 +1,5 @@
 <view wx:if="{{!searching}}" class="container">
+
   <view class="header">
     <view class="box" bind:tap="onSearching">
       <image src="/images/icon/search.png"></image>
@@ -12,8 +13,8 @@
         <v-searchRes res="{{item}}"></v-searchRes>
       </block>
     </view>
-
-
+    <v-loading class="loading-center" wx:if="{{loadingCenter}}"></v-loading>
   </view>
 </view>
-<v-search wx:if="{{searching}}" bind:cancle="onCancle"></v-search>
+
+<v-search  more="{{more}}"   wx:if="{{searching}}" bind:cancle="onCancle"></v-search>

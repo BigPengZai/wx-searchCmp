@@ -7,7 +7,8 @@ class BookModel extends HTTP{
         data:{
           q,
           per_page,
-          page
+          page,
+          sort:'stars'
         }
       })
     }

@@ -2,6 +2,7 @@
   "component": true,
   "usingComponents": {
     "v-tag":"/components/tag/index",
-    "v-searchRes":"/components/searchRes/index"
+    "v-searchRes":"/components/searchRes/index",
+    "v-loading":"/components/loading/index"
   }
 }
