@@ -11,7 +11,7 @@ Page({
    */
   data: {
     searching: false,
-    books: [],
+    categorys: [],
     more: '',
     loadingCenter:false
   },
@@ -24,7 +24,7 @@ Page({
     bookModel.search('java',10,1).then(res=>{
       console.log(res)
       this.setData({
-        books:res.items
+        categorys:res.items
       })
       this._hideLoadingCenter()
     },()=>{

@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/book/book",
     "pages/home/home",
+    "pages/categorys/categorys",
     "pages/mine/mine",
     "components/search/index"
   ],
@@ -26,7 +26,7 @@
       },
       {
         "selectedIconPath": "/images/tab/book@highlight.png",
-        "pagePath": "pages/book/book",
+        "pagePath": "pages/categorys/categorys",
         "text": "语言",
         "iconPath": "/images/tab/book.png"
       },

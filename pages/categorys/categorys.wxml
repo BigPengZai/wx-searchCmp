@@ -8,8 +8,8 @@
   </view>
   <view class="sub-container">
     <text class="title">LanguageList</text>
-    <view class="books-container">
-      <block wx:key="id" wx:for="{{books}}">
+    <view class="categorys-container">
+      <block wx:key="id" wx:for="{{categorys}}">
         <v-searchRes res="{{item}}"></v-searchRes>
       </block>
     </view>

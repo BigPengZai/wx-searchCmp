@@ -1,5 +1,5 @@
 <!--components/searchRes/index.wxml-->
-<view class="books-container">
+<view class="categorys-container">
   <text class='name'>name: {{res.name}}</text>
   <text class='name'>created_at: {{res.created_at}}</text>
   <text class='name'>stars: {{res.stargazers_count}}</text>

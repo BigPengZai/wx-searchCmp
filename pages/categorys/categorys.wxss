@@ -1,4 +1,4 @@
-/* pages/book/book.wxss */
+
 
 .container{
   display: flex;
@@ -55,7 +55,7 @@
 }
 
 
-.books-container{
+.categorys-container{
   width: 100%;
 }
 .loading-center{
